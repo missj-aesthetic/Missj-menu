@@ -209,7 +209,564 @@
 
   .service-info { flex: 1; }
 
-< truncated lines 212-769 >
+  .service-name {
+    font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--charcoal);
+    margin-bottom: 4px;
+  }
+
+  .service-desc {
+    font-size: 0.78rem;
+    color: var(--soft-grey);
+    letter-spacing: 0.05em;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .service-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    font-weight: 400;
+    color: var(--charcoal);
+    white-space: nowrap;
+    padding-top: 2px;
+    letter-spacing: 0.04em;
+  }
+
+  .service-price .currency {
+    font-size: 0.8em;
+    color: var(--taupe);
+    margin-right: 2px;
+  }
+
+  .service-price.addon {
+    color: var(--charcoal);
+  }
+
+  /* Price box for complex pricing */
+  .price-box {
+    background: rgba(184,169,154,0.1);
+    border-radius: 8px;
+    padding: 14px 20px;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--charcoal);
+    letter-spacing: 0.06em;
+    line-height: 2;
+    border: 1px solid var(--divider);
+  }
+
+  .price-box .price-row {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .price-box .price-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+  }
+
+  .price-box .price-note {
+    font-size: 0.78rem;
+    color: var(--accent-gold);
+    margin-top: 4px;
+  }
+
+  /* ─── EYELASH TABLE ─── */
+  .lash-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+  }
+
+  .lash-table td {
+    padding: 10px 0;
+    font-size: 0.88rem;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid rgba(221,213,204,0.4);
+    color: var(--charcoal);
+  }
+
+  .lash-table td:last-child {
+    text-align: right;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+  }
+
+  .lash-group-header td {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: var(--accent-gold);
+    padding-top: 18px;
+    border-bottom: 1px solid var(--divider);
+    font-weight: 500;
+  }
+
+  .lash-note-box {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .lash-note-box span {
+    font-size: 0.76rem;
+    color: var(--soft-grey);
+    letter-spacing: 0.04em;
+    padding: 6px 10px;
+    background: rgba(184,169,154,0.08);
+    border-radius: 4px;
+  }
+
+  /* ─── SEMI-PERM ─── */
+  .semiperm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+
+  @media (max-width: 520px) {
+    .semiperm-grid { grid-template-columns: 1fr; }
+  }
+
+  .semiperm-card {
+    background: var(--card-bg);
+    border: 1px solid var(--divider);
+    border-radius: 12px;
+    padding: 24px;
+    backdrop-filter: blur(6px);
+  }
+
+  .semiperm-card .sp-name {
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--charcoal);
+    margin-bottom: 4px;
+  }
+
+  .semiperm-card .sp-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--accent-gold);
+    margin-bottom: 8px;
+  }
+
+  .semiperm-card .sp-note {
+    font-size: 0.76rem;
+    color: var(--soft-grey);
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+
+  .semiperm-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .semiperm-card ul li {
+    font-size: 0.78rem;
+    color: var(--charcoal);
+    letter-spacing: 0.04em;
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .semiperm-card ul li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent-rose);
+    flex-shrink: 0;
+  }
+
+  /* Refill table */
+  .refill-grid {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--divider);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 24px;
+    font-size: 0.83rem;
+  }
+
+  .refill-grid > div {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--divider);
+    border-right: 1px solid var(--divider);
+  }
+
+  .refill-grid > div:nth-child(3n) { border-right: none; }
+  .refill-grid > div:nth-last-child(-n+3) { border-bottom: none; }
+
+  .refill-grid .rg-header {
+    background: rgba(184,169,154,0.15);
+    font-size: 0.76rem;
+    letter-spacing: 0.15em;
+    color: var(--soft-grey);
+  }
+
+  .refill-grid .rg-label {
+    font-weight: 500;
+    color: var(--charcoal);
+    letter-spacing: 0.06em;
+  }
+
+  /* ─── SAVINGS BANNER ─── */
+  .savings-banner {
+    background: linear-gradient(135deg, var(--charcoal) 0%, #5a5050 100%);
+    color: var(--warm-white);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-top: 48px;
+    text-align: center;
+  }
+
+  .savings-banner h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+    font-weight: 400;
+  }
+
+  .savings-tiers {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .savings-tier {
+    text-align: center;
+  }
+
+  .savings-tier .st-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--accent-gold);
+    display: block;
+  }
+
+  .savings-tier .st-label {
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    color: rgba(245,240,235,0.7);
+  }
+
+  .savings-notes {
+    font-size: 0.76rem;
+    color: rgba(245,240,235,0.65);
+    line-height: 2;
+    letter-spacing: 0.06em;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 16px;
+    margin-top: 8px;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    text-align: center;
+    padding: 28px;
+    font-size: 0.75rem;
+    color: var(--taupe);
+    letter-spacing: 0.15em;
+    border-top: 1px solid var(--divider);
+  }
+
+  footer a {
+    color: var(--accent-gold);
+    text-decoration: none;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 600px) {
+    nav { gap: 4px; }
+    .tab-btn { font-size: 0.72rem; padding: 6px 12px; }
+    .service-price { font-size: 1.1rem; }
+  }
+  /* ─── LINE BUTTON ─── */
+  .line-btn-wrap {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--divider);
+  }
+
+  .line-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #06C755;
+    color: #fff;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+    box-shadow: 0 4px 18px rgba(6,199,85,0.25);
+  }
+
+  .line-btn:hover {
+    background: #05b04b;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(6,199,85,0.35);
+  }
+
+  .line-btn svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <!-- Lotus SVG icon -->
+  <svg class="logo-icon" viewBox="0 0 80 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M40 65 C30 55 10 50 5 35 C15 40 28 42 40 65Z" stroke="#8a8080" stroke-width="1.2" fill="none"/>
+    <path d="M40 65 C50 55 70 50 75 35 C65 40 52 42 40 65Z" stroke="#8a8080" stroke-width="1.2" fill="none"/>
+    <path d="M40 65 C40 48 30 30 20 20 C28 32 38 48 40 65Z" stroke="#8a8080" stroke-width="1.2" fill="none"/>
+    <path d="M40 65 C40 48 50 30 60 20 C52 32 42 48 40 65Z" stroke="#8a8080" stroke-width="1.2" fill="none"/>
+    <path d="M40 65 C40 45 38 25 40 8 C42 25 40 45 40 65Z" stroke="#8a8080" stroke-width="1.2" fill="none"/>
+  </svg>
+  <div class="brand-name">Miss J <span style="font-size:0.6em;">唯美 · 美學</span></div>
+  <div class="brand-sub">韓 國 皮 膚 管 理</div>
+  <div class="header-divider"></div>
+</header>
+
+<!-- TAB NAVIGATION -->
+<nav>
+  <button class="tab-btn active" onclick="switchTab('basic')">基礎 &amp; 煥膚管理</button>
+  <button class="tab-btn" onclick="switchTab('premium')">高端再生</button>
+  <button class="tab-btn" onclick="switchTab('medical')">類醫美管理</button>
+  <button class="tab-btn" onclick="switchTab('addon')">加購項目</button>
+  <button class="tab-btn" onclick="switchTab('lash')">睫毛管理 / 接睫毛</button>
+  <button class="tab-btn" onclick="switchTab('semiperm')">半永久紋繡</button>
+</nav>
+
+<main>
+
+  <!-- ════════════════ TAB: 基礎 & 煥膚管理 ════════════════ -->
+  <div id="tab-basic" class="tab-panel active">
+
+    <!-- 基礎管理 -->
+    <div class="section-title">
+      <h2>基 礎 管 理</h2>
+      <div class="title-line"><span></span><em>Basic Care</em><span></span></div>
+    </div>
+
+    <div class="service-item">
+      <div class="service-info">
+        <div class="service-name">深層毛孔清潔</div>
+        <div class="service-desc">含：水飛梭｜手工清粉刺｜敷膜｜照光修護</div>
+      </div>
+      <div class="service-price"><span class="currency">$</span>2,100</div>
+    </div>
+
+    <div class="service-item">
+      <div class="service-info">
+        <div class="service-name">活膚導入管理</div>
+        <div class="service-desc">含：水飛梭｜手工清粉刺｜客製化導入｜敷膜｜照光修護</div>
+      </div>
+      <div class="service-price"><span class="currency">$</span>2,700</div>
+    </div>
+
+    <div class="notice-box">
+      【水飛梭也可更換超聲波角質鏟、或 +300 升級雙機清潔】
+    </div>
+
+    <!-- 煥膚更新 -->
+    <div class="section-title" style="margin-top:44px">
+      <h2>煥 膚 更 新 管 理</h2>
+      <div class="title-line"><span></span><em>Skin Renewal</em><span></span></div>
+    </div>
+
+    <div class="notice-box">
+      【內容皆包含水飛梭｜手工清粉刺｜客製化導入｜敷膜｜照光】
+    </div>
+
+    <div class="service-item">
+      <div class="service-info">
+        <div class="service-name">複合煥膚管理</div>
+      </div>
+      <div class="service-price"><span class="currency">$</span>3,000</div>
+    </div>
+    <div class="service-item">
+      <div class="service-info">
+        <div class="service-name">黑鑽矽晶管理</div>
+      </div>
+      <div class="service-price"><span class="currency">$</span>3,800</div>
+    </div>
+    <div class="service-item">
+      <div class="service-info">
+        <div class="service-name">韓國海綿骨針 / 德國水針</div>
+      </div>
+      <div class="service-price"><span class="currency">$</span>4,680</div>
+    </div>
+
+    <div class="line-btn-wrap">
+      <a class="line-btn" href="https://lin.ee/ZGKLqV1" target="_blank">
+        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINE 諮詢 / 預約
+      </a>
+    </div>
+  </div>
+
+  <!-- ════════════════ TAB: 加購項目 ════════════════ -->
+  <div id="tab-addon" class="tab-panel">
+    <div class="section-title">
+      <h2>加 購 項 目</h2>
+      <div class="title-line"><span></span><em>Add-ons</em><span></span></div>
+    </div>
+
+    <div class="service-item">
+      <div class="service-info">
+        <div class="service-name">雞蛋肌拋光</div>
+        <div class="service-desc">物理性去除小汗毛，非熱蠟無痛感</div>
+      </div>
+      <div class="service-price addon"><span class="currency">+</span>699</div>
+    </div>
+    <div class="service-item">
+      <div class="service-info">
+        <div class="service-name">臉部循環撥筋</div>
+        <div class="service-desc">促進循環、強化吸收、緊實感</div>
+      </div>
+      <div class="service-price addon"><span class="currency">+</span>799</div>
+    </div>
+    <div class="service-item">
+      <div class="service-info">
+        <div class="service-name">天鵝頸管理</div>
+        <div class="service-desc">頸部保濕、延緩老化</div>
+      </div>
+      <div class="service-price addon"><span class="currency">+</span>999</div>
+    </div>
+    <div class="service-item">
+      <div class="service-info">
+        <div class="service-name">眼部霧化放鬆</div>
+        <div class="service-desc">降低眼壓、舒緩疲勞</div>
+      </div>
+      <div class="service-price addon"><span class="currency">+</span>599</div>
+    </div>
+    <div class="service-item">
+      <div class="service-info">
+        <div class="service-name">眼部循環管理</div>
+        <div class="service-desc">改善黑眼圈、淡化眼周細紋</div>
+      </div>
+      <div class="service-price addon"><span class="currency">+</span>1,200</div>
+    </div>
+
+    <div class="line-btn-wrap">
+      <a class="line-btn" href="https://lin.ee/ZGKLqV1" target="_blank">
+        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.630 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINE 諮詢 / 預約
+      </a>
+    </div>
+  </div>
+
+  <!-- ════════════════ TAB: 高端再生 ════════════════ -->
+  <div id="tab-premium" class="tab-panel">
+    <div class="section-title">
+      <h2>高 端 再 生 管 理</h2>
+      <div class="title-line"><span></span><em>Premium Regeneration</em><span></span></div>
+    </div>
+
+    <div class="notice-box">
+      【內容皆包含水飛梭｜手工清粉刺｜客製化導入｜敷膜｜照光】
+    </div>
+
+    <div class="service-item">
+      <div class="service-info">
+        <div class="service-name">尊翼安瓶導入管理</div>
+        <div class="service-desc">水肌潤澤｜亮膚晶透｜逆顏修護｜抗痘平衡，四擇一</div>
+      </div>
+      <div class="service-price"><span class="currency">$</span>3,500</div>
+    </div>
+    <div class="service-item">
+      <div class="service-info">
+        <div class="service-name">水光再生管理</div>
+        <div class="service-desc">開啟水通道蛋白，有感迅速補水，由內而外呵護乾燥肌膚</div>
+      </div>
+      <div class="service-price"><span class="currency">$</span>4,000</div>
+    </div>
+    <div class="service-item">
+      <div class="service-info">
+        <div class="service-name">時光蛋白管理</div>
+        <div class="service-desc">修護肌膚結構屏障功能、改善敏感泛紅、穩定膚況</div>
+      </div>
+      <div class="service-price"><span class="currency">$</span>4,200</div>
+    </div>
+    <div class="service-item">
+      <div class="service-info">
+        <div class="service-name">維C彈嫩管理</div>
+        <div class="service-desc">改善色沉、預防痘疤斑點、長效亮膚，同時補充膠原抗老</div>
+      </div>
+      <div class="service-price"><span class="currency">$</span>4,200</div>
+    </div>
+    <div class="service-item">
+      <div class="service-info">
+        <div class="service-name">光韻抗老管理</div>
+        <div class="service-desc">高濃度谷胱甘肽 + A醇，改善疲勞感、淡化老化紋路</div>
+      </div>
+      <div class="service-price"><span class="currency">$</span>5,000</div>
+    </div>
+    <div class="service-item">
+      <div class="service-info">
+        <div class="service-name">冰晶童顏管理</div>
+        <div class="service-desc">凍晶膠原蛋白、強化澎潤彈性、水包油質地保濕不黏膩</div>
+      </div>
+      <div class="service-price"><span class="currency">$</span>5,000</div>
+    </div>
+
+    <!-- Savings banner -->
+    <div class="savings-banner">
+      <h3>儲 值 優 惠</h3>
+      <div class="savings-tiers">
+        <div class="savings-tier">
+          <span class="st-amount">儲值 $10,000</span>
+          <span class="st-label">享 85 折</span>
+        </div>
+        <div class="savings-tier">
+          <span class="st-amount">儲值 $20,000</span>
+          <span class="st-label">享 8 折</span>
+        </div>
+      </div>
+      <div class="savings-notes">
+        不限本人使用<br>
+        購買產品 &amp; 美睫項目統一享9折優惠<br>
+        自儲值日開始計算，一年內需使用完畢<br>
+        儲值折扣不可與其他優惠併用
+      </div>
+    </div>
+
+    <div class="line-btn-wrap">
+      <a class="line-btn" href="https://lin.ee/ZGKLqV1" target="_blank">
+        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.630 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.630 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
         LINE 諮詢 / 預約
       </a>
     </div>
